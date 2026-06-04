@@ -103,9 +103,9 @@ My goal is to:
 
 | Topic | Status |
 |---------|---------|
-| Python Basics | ⏳ In Progress |
-| Functions | ⏳ In Progress |
-| OOP | ⬜ Not Started |
+| Python Basics | ✅ Completed |
+| Functions | ✅ Completed |
+| OOP | ⏳ In Progress |
 | NumPy | ⬜ Not Started |
 | Pandas | ⬜ Not Started |
 | Data Visualization | ⬜ Not Started |
