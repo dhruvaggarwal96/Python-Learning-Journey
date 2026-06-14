@@ -1,0 +1,11 @@
+CustomerID,Name,Age,City,PurchaseAmount
+101,Aman,22.0,Delhi,1200.0
+102,Riya,24.0,Mumbai,2500.0
+103,Dhruv,,Pune,1800.0
+104,Priya,28.0,Delhi,
+105,Karan,30.0,,3200.0
+106,Neha,25.0,Jaipur,2100.0
+107,Arjun,27.0,Mumbai,1500.0
+108,Simran,,Pune,2700.0
+109,Rohit,31.0,Delhi,
+110,Anjali,23.0,Chandigarh,1900.0
