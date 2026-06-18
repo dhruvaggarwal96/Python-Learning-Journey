@@ -105,9 +105,9 @@ My goal is to:
 |---------|---------|
 | Python Basics | ✅ Completed |
 | Functions | ✅ Completed |
-| OOP | ⏳ In Progress |
-| NumPy | ⬜ Not Started |
-| Pandas | ⬜ Not Started |
+| OOP | ✅ Completed  |
+| NumPy | ✅ Completed |
+| Pandas | ⏳ In Progress |
 | Data Visualization | ⬜ Not Started |
 | SQL | ⬜ Not Started |
 | Machine Learning | ⬜ Not Started |
