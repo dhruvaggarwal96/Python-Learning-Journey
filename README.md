@@ -107,9 +107,9 @@ My goal is to:
 | Functions | ✅ Completed |
 | OOP | ✅ Completed  |
 | NumPy | ✅ Completed |
-| Pandas | ⏳ In Progress |
-| Data Visualization | ⬜ Not Started |
-| SQL | ⬜ Not Started |
+| Pandas | ✅ Completed |
+| Data Visualization | ✅ Completed |
+| SQL | ⏳ In Progress |
 | Machine Learning | ⬜ Not Started |
 
 Legend:
