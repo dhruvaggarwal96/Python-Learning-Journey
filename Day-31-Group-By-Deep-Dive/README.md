@@ -1,8 +1,5 @@
 # Day 31 – SQL GROUP BY Deep Dive
 
-## 📅 Date
-
-July 1, 2026
 
 ## 📌 Topic
 
