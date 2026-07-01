@@ -134,3 +134,201 @@ FROM sales
 GROUP BY category
 HAVING revenue > 100000;
 
+-- Find customers whose total purchase is above the average purchase of all customers. 
+						
+SELECT customer_name , SUM(quantity * price ) FROM SALES 
+GROUP  BY customer_name 
+HAVING SUM(quantity * price ) >                     
+( SELECT AVG(total_purchase) 
+FROM                    
+	(SELECT SUM(quantity * price ) AS total_purchase
+	FROM sales
+	GROUP BY customer_name ) AS customer_totals ) ;
+    
+-- Find cities whose total revenue is greater than the average revenue of all cities. 
+SELECT city , SUM(quantity * price ) 
+FROM sales
+GROUP BY city
+HAVING SUM(quantity * price ) > 
+(SELECT AVG (total_revenue) FROM 
+(SELECT SUM(quantity * price ) AS total_revenue
+FROM sales 
+GROUP BY city) AS city_totals);
+
+/* For each city, show:
+
+Number of Orders
+Total Revenue
+Average Revenue
+Maximum Order Value
+Minimum Order Value
+
+in one query. */
+SELECT city ,
+ MAX( price * quantity ) AS Maximum_Order_Value,
+ MIN(quantity * price ) AS Minimum_Order_Value,
+ SUM(quantity * price ) AS Total_Revenue,
+ AVG(quantity * price ) AS Average_Revenue,
+ COUNT(order_id) AS Number_of_Orders
+ FROM sales 
+GROUP BY city;
+
+-- Find customers who have placed more than 2 orders. 
+SELECT customer_name FROM sales
+GROUP BY customer_name
+HAVING COUNT(order_id) > 2;
+
+-- Find products that generated more than ₹1,00,000 in revenue.
+SELECT product , SUM(price * quantity) AS revenue
+FROM sales
+GROUP BY product
+HAVING SUM(price * quantity) > 100000;
+
+-- Find cities where the average order value is greater than ₹30,000
+SELECT city , AVG(price * quantity) as average_order_value
+FROM sales
+GROUP BY city
+HAVING average_order_value > 30000;
+
+-- Find categories having more than 5 orders
+SELECT category , COUNT(order_id) AS orders
+FROM sales
+GROUP BY category 
+HAVING COUNT(order_id) > 5;
+
+-- Find customers whose minimum order value is greater than ₹10,000. 
+SELECT customer_name , MIN(price * quantity) AS order_value
+FROM sales
+GROUP BY customer_name
+HAVING MIN(price * quantity ) > 10000;
+
+-- Find products sold in more than 2 cities.
+SELECT product , COUNT(DISTINCT city) AS number_of_cities
+FROM sales
+GROUP BY product
+HAVING number_of_cities > 2;
+
+-- Find the top-selling category based on total quantity sold.
+SELECT category , SUM(quantity) AS total_quantity
+FROM sales
+GROUP BY category
+ORDER BY total_quantity DESC;
+
+-- Find cities where the maximum order value exceeds ₹70,000.
+SELECT city ,  MAX(quantity * price ) AS maximum_order_value
+FROM sales
+GROUP BY city
+HAVING maximum_order_value > 70000;
+
+-- Find products whose average selling price is below ₹2,000.
+SELECT product , AVG(price)
+FROM sales
+GROUP BY product 
+HAVING AVG(price) < 2000;
+
+-- Find the customer(s) with the highest total revenue.
+SELECT customer_name ,  SUM(quantity * price ) AS total_revenue
+FROM sales
+GROUP BY customer_name
+ORDER BY total_revenue DESC
+LIMIT 1;
+
+-- Find the city with the lowest total revenue.
+SELECT city , SUM(price * quantity) AS total_revenue
+FROM sales
+GROUP BY city
+ORDER BY total_revenue
+LIMIT 1;
+
+-- Find products whose revenue is greater than the average product revenue.
+SELECT product , SUM(quantity * price ) AS revenue 
+FROM sales
+GROUP BY product 
+HAVING revenue > 
+(SELECT AVG(total_revenue) 
+FROM 
+	(SELECT SUM(price * quantity ) AS total_revenue
+	FROM sales 
+	GROUP BY product) AS product_revenue);
+    
+-- Find customers whose total purchase is less than the average customer purchase.
+SELECT customer_name , SUM(quantity * price ) total_purchase
+FROM sales
+GROUP BY customer_name
+HAVING total_purchase < 
+(SELECT AVG(customer_purchase)
+FROM 
+(SELECT  SUM(price * quantity) AS customer_purchase
+FROM sales
+GROUP BY customer_name) AS total_customer_purchase);
+
+-- Find cities where total revenue is higher than Delhi's revenue.
+SELECT city , SUM(price * quantity) AS total_revenue
+FROM sales
+GROUP BY city
+HAVING total_revenue > 
+(SELECT SUM(price * quantity ) AS Delhi_revenue
+FROM sales
+WHERE city = "Delhi"
+GROUP BY city);
+
+-- Find the category with the highest average order value.
+SELECT category , AVG(price * quantity) 
+FROM sales 
+GROUP  BY category
+ORDER BY category DESC 
+LIMIT 1;
+
+-- Find customers who spent more than the customer "Amit".
+SELECT customer_name , SUM(price * quantity) as spend
+FROM sales
+GROUP BY customer_name
+HAVING spend > (
+SELECT SUM(price * quantity)
+FROM sales
+WHERE customer_name = "Amit");
+
+-- Find the month having the highest total revenue.
+
+SELECT MONTHNAME(order_date), SUM(price * quantity) AS total_revenue
+FROM sales
+GROUP BY MONTHNAME(order_date)
+ORDER BY total_revenue DESC 
+LIMIT 1;
+
+-- Find products whose total quantity sold is above the average quantity sold per product.
+SELECT product , SUM(quantity) AS total_quantity
+FROM sales
+GROUP BY product
+HAVING total_quantity > 
+						(SELECT AVG(sum_quantity) FROM
+						(SELECT SUM(quantity) AS sum_quantity
+                        FROM sales group by product) AS total_quantity);
+                        
+                        
+-- Find cities contributing more than 30% of total revenue.
+SELECT city , SUM(quantity * price ) 
+FROM sales
+GROUP BY city
+HAVING SUM(quantity * price ) > 
+(SELECT revenue * 0.3 FROM
+(SELECT SUM(quantity * price ) AS revenue
+FROM sales) AS total_revenue);
+
+-- For every customer, show:
+
+-- Total Orders
+-- Total Revenue
+-- Average Order Value
+-- Highest Order
+-- Lowest Order
+SELECT customer_name ,
+		COUNT(order_id) AS total_orders,
+        SUM(price * quantity) AS total_revenue,
+        AVG(price * quantity) AS average_order_value,
+        MAX(price * quantity) AS highest_order,
+        MIN(price * quantity) AS lowest_order
+FROM sales
+GROUP BY customer_name;
+
+
