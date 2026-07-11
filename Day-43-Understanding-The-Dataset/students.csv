@@ -1,0 +1,11 @@
+StudentID,Name,Age,Gender,Marks,City,AdmissionDate,Scholarship
+1,Aman,20,Male,85,Delhi,2024-01-15,True
+2,Riya,21,Female,92,Mumbai,2024-02-10,False
+3,Rohit,19,Male,76,Pune,2024-03-05,True
+4,Neha,22,Female,88,Delhi,2024-01-20,False
+5,Karan,20,Male,90,Jaipur,2024-04-12,True
+6,Priya,21,Female,95,Mumbai,2024-05-18,True
+7,Arjun,23,Male,80,Pune,2024-06-25,False
+8,Sneha,20,Female,87,Delhi,2024-07-10,True
+9,Vikas,22,Male,78,Jaipur,2024-08-01,False
+10,Anjali,21,Female,91,Delhi,2024-09-15,True
