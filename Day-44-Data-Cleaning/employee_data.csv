@@ -1,0 +1,17 @@
+Employee_ID,Name,Department,Age,Salary,Date_Joined,Email,Phone,City,Performance_Score,Bonus
+101,Amit,Sales,25,45000,15-01-2022,amit@gmail.com,9876543210,Delhi,8.5,5000
+102,Priya,HR,29,52000,20-03-2021,priya@gmail.com,9876543211,Mumbai,9,6000
+103,Rahul,IT,,65000,15-06-2020,rahul@gmail.com,9876543212,Bangalore,8.8,7000
+104,Neha,Finance,31,58000,10-11-2020,neha@gmail.com,9876543213,Pune,9.2,6500
+105,Karan,IT,27,,25-08-2019,karan@gmail.com,9876543214,Delhi,8.1,5500
+106,Anjali,Marketing,26,47000,18-02-2022,anjali@gmail.com,9876543215,Jaipur,,5000
+107,Vikas,Sales,35,70000,30-05-2021,,9876543216,Delhi,9.4,8000
+108,Simran,HR,28,51000,15-09-2020,simran@gmail.com,,Mumbai,8.6,6000
+109,Rohit,Finance,30,60000,01-12-2019,rohit@gmail.com,9876543218,,8.9,
+110,Sneha,IT,24,48000,22-07-2022,sneha@gmail.com,9876543219,Bangalore,8.3,4500
+110,Sneha,IT,24,48000,22-07-2022,sneha@gmail.com,9876543219,Bangalore,8.3,4500
+111,Arjun,Sales,twenty six,55000,05-10-2021,arjun@gmail.com,9876543220,Delhi,8,5200
+112,Kavya,Marketing,29,54000,12-03-2020,kavya@gmail.com,9876543221,Chennai,Excellent,5800
+113,Manish,Finance,33,62000,2021-14-10,manish@gmail.com,9876543222,Pune,9.1,6400
+114,Pooja,HR,27,50000,,pooja@gmail.com,9876543223,Mumbai,8.4,5900
+115,Deepak,IT,29,66000,18-06-2020,deepak@gmail.com,9876543224,Bangalore,8.7,7200
